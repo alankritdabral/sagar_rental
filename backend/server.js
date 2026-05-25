@@ -73,9 +73,9 @@ app.get('/payment', (req, res) => res.sendFile(path.join(__dirname, '../frontend
 app.get('/dashboard', (req, res) => res.sendFile(path.join(__dirname, '../frontend/public/dashboard.html')));
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, '../frontend/public/index.html')));
 
-const PORT = 5501;
+const PORT = process.env.PORT || 5501;
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`\n🚀 Server is running!`);
-    console.log(`🔗 Local: http://localhost:${PORT}`);
+    console.log(`🔗 Port: ${PORT}`);
     console.log(`\nPress Ctrl+C to stop.\n`);
 });
