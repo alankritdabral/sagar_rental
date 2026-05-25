@@ -46,19 +46,19 @@ if (fs.existsSync(apiDir)) {
 }
 
 // Serve static files - AFTER API
-app.use(express.static('public', { redirect: false }));
-app.use('/src', express.static(path.join(__dirname, 'src')));
+app.use(express.static(path.join(__dirname, '../frontend/public'), { redirect: false }));
+app.use('/src', express.static(path.join(__dirname, '../frontend/src')));
 
 // Rewrites for SPA-like navigation
 app.get('/admin', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'public/admin/admin.html'));
+    res.sendFile(path.resolve(__dirname, '../frontend/public/admin/admin.html'));
 });
 app.get('/admin-login', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'public/admin/admin-login.html'));
+    res.sendFile(path.resolve(__dirname, '../frontend/public/admin/admin-login.html'));
 });
-app.get('/payment', (req, res) => res.sendFile(path.join(__dirname, 'public/payment.html')));
-app.get('/dashboard', (req, res) => res.sendFile(path.join(__dirname, 'public/dashboard.html')));
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public/index.html')));
+app.get('/payment', (req, res) => res.sendFile(path.join(__dirname, '../frontend/public/payment.html')));
+app.get('/dashboard', (req, res) => res.sendFile(path.join(__dirname, '../frontend/public/dashboard.html')));
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, '../frontend/public/index.html')));
 
 const PORT = 5501;
 app.listen(PORT, '0.0.0.0', () => {
