@@ -1,5 +1,7 @@
 // API and Auth State Management (formerly firebase.js)
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
+
 export const apiCall = async (endpoint, method = 'GET', body = null) => {
     const token = localStorage.getItem('auth_token');
     
@@ -14,7 +16,8 @@ export const apiCall = async (endpoint, method = 'GET', body = null) => {
     }
     if (body) options.body = JSON.stringify(body);
     
-    const response = await fetch(endpoint, options);
+    const url = endpoint.startsWith('http') ? endpoint : `${API_BASE_URL}${endpoint}`;
+    const response = await fetch(url, options);
     if (!response.ok) {
         const status = response.status;
         const text = await response.text();
