@@ -2,7 +2,10 @@
 /* Tailwind handles most of the styling */
 
 input:focus, select:focus, textarea:focus {
-    @apply ring-2 ring-blue-500 border-transparent outline-none;
+    box-shadow: 0 0 0 2px rgb(59 130 246);
+    border-color: transparent;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
 }
 
 .glass-card {
