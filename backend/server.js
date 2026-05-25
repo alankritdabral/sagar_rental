@@ -5,10 +5,13 @@ import { fileURLToPath, pathToFileURL } from 'url';
 import fs from 'fs';
 import dotenv from 'dotenv';
 
-dotenv.config({ override: true });
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+dotenv.config({ 
+    path: path.join(__dirname, '.env'),
+    override: true 
+});
 
 const app = express();
 app.use(express.json({ limit: '10mb' }));

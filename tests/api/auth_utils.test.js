@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import jwt from 'jsonwebtoken';
-import { verifyAuth } from '../../api/_utils.js';
+import { verifyAuth } from '../../backend/api/_utils.js';
 
 describe('Auth Utility', () => {
   const mockSecret = 'test-secret';
