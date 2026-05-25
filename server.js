@@ -20,7 +20,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// Mock Vercel API - REGISTRATION FIRST
+// Register API Routes
 const apiDir = path.join(__dirname, 'api');
 if (fs.existsSync(apiDir)) {
     const apiFiles = fs.readdirSync(apiDir).filter(f => f.endsWith('.js') && !f.startsWith('_'));

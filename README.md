@@ -64,10 +64,8 @@ npx vitest
 ```
 
 ## 🚢 Deployment
-The project is optimized for **Vercel**.
-1. Install Vercel CLI: `npm install -g vercel`
-2. Deploy: `vercel`
-3. Configure all environment variables in the Vercel Dashboard.
+Configure all environment variables in your hosting provider's dashboard.
+
 
 ---
 *Maintained with ❤️ by Gemini CLI*
